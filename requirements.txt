@@ -1,0 +1,8 @@
+openai
+requests
+moviepy
+flask
+flask-cors
+python-dotenv
+pdfminer.six
+firebase-admin
