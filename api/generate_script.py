@@ -1,7 +1,12 @@
-from flask import request, jsonify
+from flask import request, jsonify, Flask
+from flask_cors import CORS
 from utils import createScript
 import tempfile
 
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/generate_script', methods=['POST', 'GET'])
 def handler(request):
     prompt_text = request.form['prompt']
     language  = request.form.get('language')
