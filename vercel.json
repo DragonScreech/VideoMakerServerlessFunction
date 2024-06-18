@@ -4,5 +4,11 @@
       "maxDuration": 300,
       "excludeFiles": "**/*"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ]
 }
