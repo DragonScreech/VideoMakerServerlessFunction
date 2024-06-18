@@ -1,14 +1,20 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    }
+  ],
   "functions": {
-    "api/*.py": {
-      "maxDuration": 300,
-      "excludeFiles": "**/*"
+    "api/app.py": {
+      "maxDuration": 300
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/api/index"
+      "src": "/api/generate-script",
+      "dest": "/api/index.py"
     }
   ]
 }
